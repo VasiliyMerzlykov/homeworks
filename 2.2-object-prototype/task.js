@@ -1,25 +1,30 @@
-//String.prototype.isPalindrome - для задачи №1
 
-function Vehicle(n){
-    this.numbers=n;
+
+String.prototype.isPalindrome = function(){
+    let str = string.toUpperCase();
+    reverse = str.split('').reverse().join('').toUpperCase();
+    if (reverse == str){
+    return true;
+    } else{
+    return false;
+    };
 }
-Vehicle.getNumber=function(){
-    returnthis.number;
-}
-function Car(){
-    this.number=4;
-}
-function Bus(){
-    this.number=6;
-}
-Car.prototype=Vehicle;
-Bus.prototype=Vehicle;
+// не могу понять как реализовать вот этот пункт 3. Используйте `this` для обращения к текущей строке на которой применяется функция
+
+
+
 function getAverageMark(marks) {
-    // код для задачи №2 писать здесь
-    // return averageMark
+    let average = 0;
+    for(let i = 0; i < marks.length; i++){
+        average += marks[i]
+    }
+    return roundedAverage = Math.floor(average/marks.length)
 }
+
 
 function checkBirthday(birthday) {
+    let bir = new Data()
+    new Data
     // код для задачи №3 писать здесь
     // return verdict
 }
