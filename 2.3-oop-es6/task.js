@@ -141,8 +141,13 @@ class Library{
     }
   }
   findBookBy(type, value){
-    // не могу реализовать метод
-  }
+    for(let i = 0; i < this.books.length; i++){      
+        if(this.books[i][type] === value){
+          return this.books[i].name
+        }         
+    }  
+    return null 
+  } 
   giveBookByName(bookName){
     for(let i = 0; i < this.books.length; i++){
     if(bookName === this.books[i].name ){
