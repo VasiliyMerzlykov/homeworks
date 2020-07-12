@@ -22,9 +22,9 @@ function getAverageMark(marks) {
 }
 
 
-function checkBirthday(birthday) {
-    let bir = new Data()
-    new Data
-    // код для задачи №3 писать здесь
-    // return verdict
-}
+// function checkBirthday(birthday) {
+//     // let now = new Data()
+//     // let birthday = new Data;
+//     // код для задачи №3 писать здесь
+//     // return verdict
+// }
