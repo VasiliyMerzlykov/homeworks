@@ -81,7 +81,7 @@ class PrintEditionItem{
         return this.state = this.state* 1.5
     }    
     set state(figure){
-      if(this.figure < 0){
+      if(figure < 0){
         this._state = 0
       }else if(this.state > 100){
         this._state = 100
@@ -143,7 +143,8 @@ class Library{
   findBookBy(type, value){
     for(let i = 0; i < this.books.length; i++){      
         if(this.books[i][type] === value){
-          return this.books[i].name
+
+          return value
         }         
     }  
     return null 
@@ -151,7 +152,7 @@ class Library{
   giveBookByName(bookName){
     for(let i = 0; i < this.books.length; i++){
     if(bookName === this.books[i].name ){
-      return this.books.splice(i, 1)
+      return bookName
     }
     }
   }
