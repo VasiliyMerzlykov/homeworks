@@ -18,6 +18,8 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     return (totalAmount.toFixed(2)/100);
 }
 
+//много console.log - делаю проверку и подписываю что на каком этапе выполняется, это для себя, в след раз все почищу, а косяки - переменные без let, спасибо, что поправили, просто уже забываю
+
 function getGreeting(name) {
     let greeting;
     if (name !== "undefined" && name.length > 0) {

@@ -23,7 +23,7 @@ function getAverageMark(marks){
        return 0;
     } 
     marks.splice(5);
-    for(let i = 0; i < marks.length; i++){   // 
+    for(let i = 0; i < marks.length; i++){   
         sumScores += marks[i]
     };
         
