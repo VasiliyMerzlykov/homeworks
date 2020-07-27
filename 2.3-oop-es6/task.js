@@ -139,7 +139,8 @@ class Library{
   giveBookByName(bookName){
     for(let i = 0; i < this.books.length; i++){
     if(bookName === this.books[i].name ){
-      return this.books.splice(i, 1)
+      this.books.splice(i, 1)
+      return this.books[i]
     }
     }
   }
@@ -156,6 +157,6 @@ console.log(library.findBookBy("name", "Властелин колец")); //null
 console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
 
 console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
-library.giveBookByName("Машина времени");
+console.log( library.giveBookByName("Машина времени"));
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
 
