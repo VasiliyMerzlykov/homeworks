@@ -1,10 +1,11 @@
 // // FIRST TASK
 // class PrintEditionItem{
 //     constructor(name, releaseDate, pagesCount, state = 100, type = null){
-//       this.name = name
-//       this.releaseDate = releaseDate
-//       this.state = state 
-//       this.type = type
+//       this.pagesCount = pagesCount;
+//       this.name = name;
+//       this.releaseDate = releaseDate;
+//       this.state = state;
+//       this.type = type;
         
 //     }
 //     fix(){
@@ -12,13 +13,13 @@
 //     }    
 //     set state(figure) {
 //       if(figure < 0){
-//         this._state = 0
+//         this._state = 0;
 //       } else if(figure > 100){
-//         this._state = 100
-//       } 
+//         this._state = 100;
+//       } else this._state = figure
 //     }
 //     get state() {
-//       return this._state
+//       return this._state;
 //     }
 // }
 
@@ -27,7 +28,7 @@
 // class Magazine extends PrintEditionItem {
 //   constructor(name, releaseDate, pagesCount, state, type = "magazine"){
 //   super(name, releaseDate, pagesCount, state)
-//   this.type = type
+//   this.type = type;
 //   }
 // }
 
@@ -58,29 +59,28 @@
 // SECOND TASK
 
 class PrintEditionItem{
-    constructor(name, releaseDate, pagesCount, state = 100, type = null){
-      this.name = name
-      this.releaseDate = releaseDate
-      this.state = state 
-      this.type = type
-        
-    }
-    fix(){
-        return this.state = this.state* 1.5
-    }    
-    set state(figure){
-      if(figure < 0){
-        this._state = 0
-      }else if(this.state > 100){
-        this._state = 100
-      } else {this._state = figure}
-    }
-    get state() {
-      return this._state
-    }
+  constructor(name, releaseDate, pagesCount, state = 100, type = null){
+    this.pagesCount = pagesCount;
+    this.name = name;
+    this.releaseDate = releaseDate;
+    this.state = state;
+    this.type = type;
+      
+  }
+  fix(){
+      return this.state = this.state* 1.5
+  }    
+  set state(figure) {
+    if(figure < 0){
+      this._state = 0;
+    } else if(figure > 100){
+      this._state = 100;
+    } else this._state = figure
+  }
+  get state() {
+    return this._state;
+  }
 }
-
-const sherlock = new PrintEditionItem("Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе", 2019, 1008);
 
 class Magazine extends PrintEditionItem {
   constructor(name, releaseDate, pagesCount, state, type = "magazine"){
@@ -138,10 +138,10 @@ class Library{
   } 
   giveBookByName(bookName){
     for(let i = 0; i < this.books.length; i++){
-    if(bookName === this.books[i].name ){
-      this.books.splice(i, 1)
-      return this.books[i]
+    if(bookName === this.books[i].name ){      
+      return this.books[i]      
     }
+    this.books.splice(i, 1)
     }
   }
 }
