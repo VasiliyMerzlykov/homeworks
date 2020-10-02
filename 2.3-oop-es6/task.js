@@ -138,10 +138,12 @@ class Library{
   } 
   giveBookByName(bookName){
     for(let i = 0; i < this.books.length; i++){
-    if(bookName === this.books[i].name ){      
-      return this.books[i]      
+    if(bookName === this.books[i].name ){
+      let unBook = this.books[i]
+      this.books.splice(i, 1)     
+      return unBook   
     }
-    this.books.splice(i, 1)
+    
     }
   }
 }
@@ -159,4 +161,6 @@ console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
 console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
 console.log( library.giveBookByName("Машина времени"));
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
+console.log("Количество книг после выдачи: " + library.books)
+
 
