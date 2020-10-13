@@ -16,19 +16,21 @@ function sum(...args) {
 let compareArrays = (arr1, arr2) => arr1.length === arr2.length && arr1.every((n, i) => n === arr2[i]);
 
 
+
+
 function memorize(fn, limit){
-  const memory = [];
-  function func(...arg){    
-    let search = memory.find(index => compareArrays(index.args, arg));    
-    if(search){
-      return search.result
-    };
+  let memory = [];
+  function mSum(...args){
+    let search = memory.find(item => compareArrays(item.args, args));
+    let result = search ? search.result : fn(...args);
     if(!search){
-      let a = {args: arg, result: arg.reduce((prev, index) => prev+index)};   
-      memory.push(a);
-      return a;
-    };       
-  };
-  return func
-};
+      memory.push({args: args, result: result})
+    }
+    if(memory.length > limit){
+      memory.shift()
+    }
+    return result;
+  }
+  return mSum
+}
 
